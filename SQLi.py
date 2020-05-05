@@ -61,6 +61,6 @@ for url in search(q,tld="com",num=no,stop=no,pause=2):
  i=i+1
 try: 
  f.close()
- print("\033[1;32;40mURLs will be saved in "+name)
+ print("\033[1;32;40mURLs are saved in "+name)
 except:
  pass
