@@ -5,8 +5,10 @@ import os
 os.system("apt install toilet -y")
 def checkvpn():
  c=os.system("ifconfig tun0")
- if(c != 0):
-  os.system("clear")
+ os.system("clear")
+ if(c==0):
+  banner()
+ else:
   banner()
   print("\033[1;31;40mIt seems that you aren't using vpn which is not recomended")
   print("")
