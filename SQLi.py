@@ -38,6 +38,7 @@ banner()
 checkvpn()
 for url in search(q,tld="com",num=no,stop=no,pause=2):
  if("php?" not in url):
+  i=i+1
   continue   
  print("\033[1;37;40m"+str(i)+". \033[1;35;40mChecking in this URL: ")
  print("\033[1;34;40m"+url)
