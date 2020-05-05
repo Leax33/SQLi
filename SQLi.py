@@ -26,7 +26,7 @@ checkvpn()
 headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0'}
 q=str(input("\033[1;33;40mEnter your dork: "))
 no=int(input("\033[1;33;40mEnter the number of results you want to search: "))
-time=int(input("\033[1;33;40mEnter the timeout :"))
+times=int(input("\033[1;33;40mEnter the timeout :"))
 op=str(input("\033[1;33;40mDo you want to save the vulnerable sites(Y/n) :"))
 if(op=="Y" or op=="y"):
  name=str(input("\033[1;33;40mEnter the name of your output file :"))
@@ -47,8 +47,8 @@ for url in search(q,tld="com",num=no,stop=no,pause=2):
    i=i+1
    continue
   checkurl=url+"'"
-  r=requests.get(url,headers=headers,timeout=time)
-  s=requests.get(checkurl,headers=headers,timeout=time)
+  r=requests.get(url,headers=headers,timeout=times)
+  s=requests.get(checkurl,headers=headers,timeout=times)
   if(r.text==s.text):
    print("\033[1;31;40mNot Vulnerable!\n")
   else:
