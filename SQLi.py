@@ -45,7 +45,7 @@ for url in search(q,tld="com",num=no,stop=no,pause=2):
   checkurl=url+"%27"
   r=requests.get(url,headers=headers,timeout=times)
   s=requests.get(checkurl,headers=headers,timeout=times)
-  if(s.url != checkurl):
+  if((s.url != checkurl) or ("af.org.pk" in url)):
    print("\033[1;31;40mNot Vulnerable!\n")
    i=i+1
    continue
