@@ -8,6 +8,7 @@ def checkvpn():
  os.system("clear")
  if(c==0):
   banner()
+  print("")
  else:
   banner()
   print("\033[1;31;40mIt seems that you aren't using vpn which is not recomended")
