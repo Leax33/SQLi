@@ -42,17 +42,17 @@ for url in search(q,tld="com",num=no,stop=no,pause=2):
  print("\033[1;37;40m"+str(i)+". \033[1;35;40mChecking in this URL: ")
  print("\033[1;34;40m"+url)
  try:
-  if(("af.org.pk" in url) or ("india.org.pk" in url) or ("na.gov.pk" in url)):
+  checkurl=url+"%27"
+  r=requests.get(url,headers=headers,timeout=times)
+  s=requests.get(checkurl,headers=headers,timeout=times)
+  if(s.url != checkurl):
    print("\033[1;31;40mNot Vulnerable!\n")
    i=i+1
    continue
-  checkurl=url+"'"
-  r=requests.get(url,headers=headers,timeout=times)
-  s=requests.get(checkurl,headers=headers,timeout=times)
   if(r.text==s.text):
    print("\033[1;31;40mNot Vulnerable!\n")
   else:
-   print("\033[1;32;40mProbably Vulnerable.\n")
+   print("\033[1;32;40mVulnerable.\n")
    if(op=="Y" or op=="y"):
     f.write(url+"\n")   
  except:
