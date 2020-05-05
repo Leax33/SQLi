@@ -28,6 +28,7 @@ op=str(input("\033[1;33;40mDo you want to save the vulnerable sites(Y/n) :"))
 if(op=="Y" or op=="y"):
  name=str(input("\033[1;33;40mEnter the name of your output file :"))
  print("\033[1;32;40mURLs will be saved in "+name)
+ time.sleep(2)
  f=open(name,"a+")
 i=1
 banner()
@@ -56,6 +57,7 @@ for url in search(q,tld="com",num=no,stop=no,pause=2):
   print("")
  i=i+1
 try: 
- f.close()     
+ f.close()
+ print("\033[1;32;40mURLs will be saved in "+name)
 except:
  pass
